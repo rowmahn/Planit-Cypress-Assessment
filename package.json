@@ -1,5 +1,11 @@
 {
   "devDependencies": {
     "cypress": "^14.4.0"
-  }
+  },
+
+  "scripts": {
+  "test": "cypress run",
+  "test:ui": "cypress open",
+  "test:specs": "cypress run --spec \"cypress/e2e/contactPage.spec.js,cypress/e2e/shopPage.spec.js\""
+}
 }

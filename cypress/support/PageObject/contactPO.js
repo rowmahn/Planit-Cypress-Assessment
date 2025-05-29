@@ -1,42 +1,41 @@
 class ContactPO {
-  visitContact() {
-    cy.visit('https://jupiter.cloud.planittesting.com/#/');
-    cy.get('#nav-contact > a').click();
-  }
+    visitContact() {
+        cy.visit('https://jupiter.cloud.planittesting.com/#/');
+        cy.get('#nav-contact > a').click();
+    }
 
-  submitBtn() {
-    cy.get('.btn-contact').click();
-  }
-  
-  verifyErrorMessages() {
-    cy.get('.alert').should('contain', 'We welcome your feedback - but we');
-    cy.get('#forename-err').should('contain', 'Forename is required');
-    cy.get('#email-err').should('contain', 'Email is required');
-    cy.get('#message-err').should('contain', 'Message is required');
-  }
+    submitBtn() {
+        cy.get('.btn-contact').click();
+    }
 
-  //Asking values for the parameters
-  fillForm(forename, email, message) {
-    cy.get('#forename').type(forename)
-    cy.get('#email').type(email)
-    cy.get('#message').type(message)
-  }
+    verifyErrorMessages() {
+        cy.get('.alert').should('contain', 'We welcome your feedback - but we');
+        cy.get('#forename-err').should('contain', 'Forename is required');
+        cy.get('#email-err').should('contain', 'Email is required');
+        cy.get('#message-err').should('contain', 'Message is required');
+    }
 
-  verifyNoErrorMessages() {
-    cy.get('#forename-err').should('not.exist');
-    cy.get('#email-err').should('not.exist');
-    cy.get('#message-err').should('not.exist');
-  }
+    //Asking values for the parameters
+    fillForm(forename, email, message) {
+        cy.get('#forename').type(forename)
+        cy.get('#email').type(email)
+        cy.get('#message').type(message)
+    }
 
-  submitForm() {
-    cy.get('.btn-contact').click();
-    cy.wait(10000);
-    //cy.get('.alert').should('be.visible');
+    verifyNoErrorMessages() {
+        cy.get('#forename-err').should('not.exist');
+        cy.get('#email-err').should('not.exist');
+        cy.get('#message-err').should('not.exist');
+    }
 
-    cy.get('.alert').should('contain', 'Thanks Roman, we appreciate your feedback.');
-  }
+    submitForm() {
+        cy.get('.btn-contact').click();
+        cy.wait(10000);
+        //cy.get('.alert').should('be.visible');
 
-  
+        cy.get('.alert').should('contain', 'Thanks Roman, we appreciate your feedback.');
+    }
+
 }
 
 export default ContactPO;

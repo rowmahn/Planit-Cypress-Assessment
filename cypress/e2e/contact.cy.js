@@ -17,11 +17,11 @@ describe('Contact Page Test', () => {
     contact.verifyErrorMessages();
 
     //filling up the form 
-    contact.fillForm('Roman', 'dulalroman1@gmail.com','This is a test');
+    contact.fillForm('Roman', 'dulalroman1@gmail.com', 'This is a test');
 
     //verifying no error message
     contact.verifyNoErrorMessages();
-  
+
   })
 
 
@@ -29,12 +29,12 @@ describe('Contact Page Test', () => {
     it(`Test case 2: Should submit form successfully`, () => {
 
       //filling up the form 
-    contact.fillForm('Roman', 'dulalroman1@gmail.com','This is a test');
+      contact.fillForm('Roman', 'dulalroman1@gmail.com', 'This is a test');
 
-    //submitting the form
-    contact.submitForm();
+      //submitting the form
+      contact.submitForm();
 
-    cy.log('Loop:::: ' + counter)
+      cy.log('Loop:::: ' + counter)
     });
   }
 

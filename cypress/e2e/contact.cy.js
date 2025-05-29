@@ -23,4 +23,16 @@ describe('Contact Page Test', () => {
     contact.verifyNoErrorMessages();
   
   })
+
+  it('Test case 2',()=>{
+
+    //filling up the form 
+    contact.fillForm('Roman', 'dulalroman1@gmail.com','This is a test');
+
+    //submitting the form
+    contact.submitForm();
+
+  })
+
+
 })

@@ -28,6 +28,14 @@ class ContactPO {
     cy.get('#message-err').should('not.exist');
   }
 
+  submitForm() {
+    cy.get('.btn-contact').click();
+    //cy.wait(10000);
+    cy.get('.alert').should('be.visible');
+    
+    cy.get('.alert').should('contain', 'Thanks Roman, we appreciate your feedback.');
+  }
+
   
 }
 

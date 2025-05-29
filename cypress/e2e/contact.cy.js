@@ -24,15 +24,18 @@ describe('Contact Page Test', () => {
   
   })
 
-  it('Test case 2',()=>{
 
-    //filling up the form 
+  for (let counter = 1; counter <= 5; counter++) {
+    it(`Test case 2: Should submit form successfully`, () => {
+
+      //filling up the form 
     contact.fillForm('Roman', 'dulalroman1@gmail.com','This is a test');
 
     //submitting the form
     contact.submitForm();
 
-  })
-
+    cy.log('Loop:::: ' + counter)
+    });
+  }
 
 })

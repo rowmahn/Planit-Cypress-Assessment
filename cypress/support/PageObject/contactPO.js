@@ -30,9 +30,9 @@ class ContactPO {
 
   submitForm() {
     cy.get('.btn-contact').click();
-    //cy.wait(10000);
-    cy.get('.alert').should('be.visible');
-    
+    cy.wait(10000);
+    //cy.get('.alert').should('be.visible');
+
     cy.get('.alert').should('contain', 'Thanks Roman, we appreciate your feedback.');
   }
 

@@ -9,7 +9,8 @@ describe('Shop Page Test', () => {
     })
 
     it('Test case 3: should verify sub-total, price & total from shop and cart page', () => {
-        shop.addItems();
+        shop.addProducts();
+        shop.verifyProducts();
     });
 });
 
